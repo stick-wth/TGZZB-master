@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        applicationId "com.tgzzb.cdc"
+        minSdkVersion 14
+        targetSdkVersion 21
+
+        ndk {
+            moduleName "libjpegbither"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+
+    sourceSets {
+        main {
+            jni.srcDirs = []
+        }
+    }
+}
+
+//task printGradleInfo{
+//    println "----------------------------------------------- "
+//    println "In posdevice, gradle id is " +gradle.hashCode()
+//    println "Home Dir:" + gradle.gradleHomeDir
+//    println "User Home Dir:" + gradle.gradleUserHomeDir
+//    println "Parent: " + gradle.parent
+//}
+//
+//
+//configurations.all {
+//    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+//        def requested = details.requested
+//        if (requested.group == 'com.android.support') {
+//            if (!requested.name.startsWith("multidex")) {
+//                if(requested.name.contains("recyclerview")||requested.name.contains("support-v4")||requested.name.contains("appcompat-v7")){
+//                    details.useVersion '21.0.3'
+//                }
+//            }
+//        }
+//    }
+//}
+
+dependencies {
+    implementation files('libs/core.jar')
+    //implementation files('libs/glide-3.7.0.jar')
+    implementation files('libs/ksoap2-android-assembly-3.1.0-jar-with-dependencies.jar')
+    implementation files('libs/okhttp-3.6.0.jar')
+    implementation files('libs/okhttputils-2_6_2.jar')
+    implementation files('libs/okio-1.10.0.jar')
+    implementation files('libs/xutileslibrary.jar')
+    //implementation project(":picture_library")
+
+    //compile 'com.android.support:design:25.3.1'
+    //21.0.3
+    //implementation 'com.android.support:support-v4:26.+'
+    //implementation 'com.android.support:appcompat-v7:26.+'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.google.code.gson:gson:2.3.1'
+    //implementation 'com.android.support:recyclerview-v7:26.+'
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.9'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation 'com.contrarywind:Android-PickerView:4.1.0'
+}

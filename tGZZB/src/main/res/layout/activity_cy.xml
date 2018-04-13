@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tgzzb.cdc.CYActivity">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/app_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:background="#87a7d6"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <CheckBox
+            android:id="@+id/ckb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="start|center_vertical"
+            android:text="@string/driver_qyjc"
+            android:textSize="@dimen/list_title_textsize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="start|center_vertical"
+            android:text="@string/cy_bgdh"
+            android:textSize="@dimen/list_title_textsize" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="start|center_vertical"
+            android:text="@string/cy_xcbz"
+            android:textSize="@dimen/list_title_textsize" />
+
+    </LinearLayout>
+
+    <ExpandableListView
+        android:id="@+id/explist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/head"
+        android:layout_marginBottom="60dp"
+        android:groupIndicator="@null" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rl_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/ui_10_dip"
+        android:orientation="horizontal">
+
+        <!--<Button-->
+            <!--android:id="@+id/btn_cyyc"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="@dimen/ui_10_dip"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/btn_corner"-->
+            <!--android:text="查验异常"-->
+            <!--android:textSize="@dimen/btn_text_size" />-->
+
+        <Button
+            android:id="@+id/btn_cywc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_corner"
+            android:text="查验完成"
+            android:textSize="@dimen/btn_text_size" />
+
+    </LinearLayout>
+
+</RelativeLayout>
